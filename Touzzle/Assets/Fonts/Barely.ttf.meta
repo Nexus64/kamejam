@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 23dcc1b3fdb96514a81633842c5a4816
+timeCreated: 1489256218
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 72
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Barely_Handwritten
+  fontNames:
+  - Barely_Handwritten
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 3
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

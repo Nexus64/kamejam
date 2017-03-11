@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Shuffler : MonoBehaviour
 {
-    List<Sprite> shapes;
-    List<Sprite> pictures;
+    public List<Sprite> shapes;
+    public List<Sprite> pictures;
     public PieceTable board;
     public TargetPiece targetPiece;
-
+    public LevelCounter counter;
 
 
     // Use this for initialization
     void Start()
     {
-        Shuffle();
     }
 
     // Update is called once per frame
@@ -23,10 +22,16 @@ public class Shuffler : MonoBehaviour
 
     }
 
-    public void Shuffle()
+    public void NextPuzzle()
     {
-        int targetIndex = Random.Range(0, shapes.Count);
+        counter.IncreasePoints();
+        Shuffle();
+    }
+
+    void Shuffle()
+    {
         var pieces = board.GetComponentsInChildren<Piece>();
+        int targetIndex = Random.Range(0, pieces.Length);
         var target = pieces[targetIndex];
         RandomizePiece(target);
 
