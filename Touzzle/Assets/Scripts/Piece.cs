@@ -32,8 +32,11 @@ public class Piece : MonoBehaviour
     public void UpdateProperties()
     {
         List<SpriteRenderer> childs = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
+        childs[1].transform.rotation = (new Quaternion(1, 0, 0, 0));
         childs[0].sprite = picture;
         childs[1].sprite = shape;
+        childs[1].flipX = mirror;
+        childs[1].transform.Rotate(0, 0, 90*rotation);
     }
 
     public bool Equals(Piece other)
@@ -47,7 +50,6 @@ public class Piece : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log(shape.name);
         GetComponentInParent<PieceTable>().CheckPiece(this);
     }
 }

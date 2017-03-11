@@ -28,9 +28,7 @@ public class Shuffler : MonoBehaviour
         int targetIndex = Random.Range(0, shapes.Count);
         var pieces = board.GetComponentsInChildren<Piece>();
         var target = pieces[targetIndex];
-        target.shape = (Sprite)shapes[Random.Range(0, shapes.Count)];
-        target.picture = (Sprite)pictures[Random.Range(0, shapes.Count)];
-        target.UpdateProperties();
+        RandomizePiece(target);
 
         for (int i = 0; i < pieces.Length; i++)
         {
@@ -39,14 +37,24 @@ public class Shuffler : MonoBehaviour
                 continue;
                 
             do
-            {
-                piece.shape = (Sprite)shapes[Random.Range(0, shapes.Count)];
-                piece.picture = (Sprite)pictures[Random.Range(0, shapes.Count)];
-                piece.UpdateProperties();
-            } while (piece.Equals(target));
+                RandomizePiece(piece);
+            while (piece.Equals(target));
         }
         board.GetComponent<PieceTable>().targetPiece = targetIndex;
         targetPiece.PickTargetPiece(board);
+    }
+
+    void RandomizePiece(Piece piece)
+    {
+        piece.shape = (Sprite)shapes[Random.Range(0, shapes.Count)];
+        piece.picture = (Sprite)pictures[Random.Range(0, shapes.Count)];
+
+        int seed = Random.Range(0, 7);
+        if (seed % 2 == 1)
+            piece.mirror = true;
+        piece.rotation = (int)(seed / 2);
+
+        piece.UpdateProperties();
     }
 
     void Awake()
