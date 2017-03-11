@@ -7,8 +7,6 @@ public class Shuffler : MonoBehaviour
     List<Object> shapes;
     List<Object> pictures;
     public PieceTable board;
-    public GameObject piece;
-    public List<GameObject> pieces;
 
     // Use this for initialization
     void Start()
@@ -24,10 +22,12 @@ public class Shuffler : MonoBehaviour
 
     void shuffle()
     {
-        for(int i = 0; i < 9; i++)
-            pieces.Add(Instantiate(piece));
-
-        board.AssignPieces(pieces, 0);
+        foreach (var piece in board.GetComponentsInChildren<Piece>())
+        {
+            piece.shape = (Sprite)shapes[Random.Range(0, shapes.Count)];
+            piece.picture = (Sprite)pictures[Random.Range(0, shapes.Count)];
+        }
+        board.GetComponent<PieceTable>().targetPiece = Random.Range(0, 9);
     }
 
     void Awake()
