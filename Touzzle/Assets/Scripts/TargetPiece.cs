@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetPiece : MonoBehaviour {
-	public PieceTable table;
-	// Use this for initialization
-	void Start () {
-		PickTargetPiece(table);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class TargetPiece : MonoBehaviour
+{
+    // Use this for initialization
+    void Start()
+    {
+        
+    }
 
-	public void PickTargetPiece(PieceTable table){
-		Piece piece = table.pieces [table.targetPiece].GetComponent<Piece>();
-		GetComponent<Piece> ().Copy (piece);
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void PickTargetPiece(PieceTable table)
+    {
+        Piece piece = table.pieces[table.targetPiece].GetComponent<Piece>();
+        GetComponent<Piece>().Copy(piece);
+       
+    }
 }
