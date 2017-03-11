@@ -30,4 +30,13 @@ public class Piece : MonoBehaviour {
 		childs [0].sprite = picture;
 		childs [1].sprite = shape;
 	}
+
+    bool Equals(Piece other)
+    {
+        return shape.name == other.shape.name &&
+               picture.name == other.picture.name &&
+               rotation == other.rotation &&
+               mirror == other.mirror;
+
+    }
 }
