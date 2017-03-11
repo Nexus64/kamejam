@@ -27,7 +27,7 @@ public class Shuffler : MonoBehaviour
         for(int i = 0; i < 9; i++)
             pieces.Add(Instantiate(piece));
 
-        board.AssignPieces(pieces, 0);
+        //board.AssignPieces(pieces, 0);
     }
 
     void Awake()

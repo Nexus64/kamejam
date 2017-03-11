@@ -10,7 +10,7 @@ public class PieceTable : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		positions = new List<Transform>(GetComponentsInChildren<Transform>());
+		pieces = new List<Transform>(GetComponentsInChildren<Transform>());
 		positions = positions.GetRange (1, 9);
 	}
 	

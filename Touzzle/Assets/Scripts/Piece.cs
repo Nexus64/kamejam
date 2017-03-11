@@ -14,11 +14,15 @@ public class Piece : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	public void Copy(Piece piece){
-
+		shape = piece.shape;
+		picture = piece.picture;
+		rotation = piece.rotation;
+		mirror = piece.mirror;
+		UpdateProperties ();
 	}
 
 	public void UpdateProperties(){

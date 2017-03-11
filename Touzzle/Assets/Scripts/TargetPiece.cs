@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetPiece : MonoBehaviour {
-	PieceTable table;
+	public PieceTable table;
 	// Use this for initialization
 	void Start () {
 		PickTargetPiece(table);
@@ -16,6 +16,6 @@ public class TargetPiece : MonoBehaviour {
 
 	public void PickTargetPiece(PieceTable table){
 		Piece piece = table.pieces [table.targetPiece].GetComponent<Piece>();
-
+		GetComponent<Piece> ().Copy (piece);
 	}
 }
