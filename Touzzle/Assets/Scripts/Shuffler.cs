@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shuffler : MonoBehaviour
 {
-    List<Object> shapes;
-    List<Object> pictures;
+	List<Sprite> shapes;
+	List<Sprite> pictures;
     public PieceTable board;
 
 
@@ -26,15 +26,18 @@ public class Shuffler : MonoBehaviour
     {
         foreach (var piece in board.GetComponentsInChildren<Piece>())
         {
+			Debug.Log (piece.shape.name);
             piece.shape = (Sprite)shapes[Random.Range(0, shapes.Count)];
+			Debug.Log ("   "+piece.shape.name);
             piece.picture = (Sprite)pictures[Random.Range(0, shapes.Count)];
+			piece.UpdateProperties ();
         }
         board.GetComponent<PieceTable>().targetPiece = Random.Range(0, 9);
     }
 
     void Awake()
     {
-        shapes = new List<Object>(Resources.LoadAll("Shapes"));
-        pictures = new List<Object>(Resources.LoadAll("Pictures"));
+		shapes = new List<Sprite>(Resources.LoadAll<Sprite>("Shapes"));
+		pictures = new List<Sprite>(Resources.LoadAll<Sprite>("Pictures"));
     }
 }
