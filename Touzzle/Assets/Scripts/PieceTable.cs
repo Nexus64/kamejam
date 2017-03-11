@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PieceTable : MonoBehaviour {
-	public List<Transform> pieces;
+	public List<GameObject> pieces;
 	public int targetPiece;
 	List<Transform> positions; 
 	public Transform test_transform;
@@ -12,12 +12,6 @@ public class PieceTable : MonoBehaviour {
 	void Start () {
 		positions = new List<Transform>(GetComponentsInChildren<Transform>());
 		positions = positions.GetRange (1, 9);
-		Debug.Log (positions.Count);
-		List<Transform> testList = new List<Transform>();
-		for (int i = 0; i < 9; i++) {
-			testList.Add (Instantiate (test_transform));
-		}
-		AssignPieces (testList, 0);
 	}
 	
 	// Update is called once per frame
@@ -25,7 +19,7 @@ public class PieceTable : MonoBehaviour {
 		
 	}
 
-	public void AssignPieces(List<Transform> pieces, int targetPiece){
+	public void AssignPieces(List<GameObject> pieces, int targetPiece){
 		this.pieces = pieces;
 		this.targetPiece = targetPiece;
 
@@ -34,8 +28,8 @@ public class PieceTable : MonoBehaviour {
 			foreach (Transform child in position){
 				Destroy(child.gameObject);
 			}
-			pieces [i].SetParent (position);
-			pieces [i].localPosition = Vector3.zero;
+			pieces[i].transform.SetParent(position);
+			pieces[i].transform.localPosition = Vector3.zero;
 		}
 	}
 }

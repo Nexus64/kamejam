@@ -1,0 +1,17 @@
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\UnityEditor.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\UnityEngine.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Mono.Cecil.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Unity.DataContract.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\UnityEngine.xml
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\Temp\bin\Debug\UnityEditor.xml
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\obj\Debug\Assembly-CSharp.dll
+D:\Documentos\Proyectos\Desarrollo de videojuegos\Proyectos e ideas\Touzzle\Touzzle\Touzzle\obj\Debug\Assembly-CSharp.pdb

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Shuffler : MonoBehaviour
 {
-    public List<Object> shapes;
-    public List<Object> pictures;
-   // public PieceTable board;
+    List<Object> shapes;
+    List<Object> pictures;
+    public PieceTable board;
+    public GameObject piece;
+    public List<GameObject> pieces;
 
     // Use this for initialization
     void Start()
     {
+        shuffle();
     }
 
     // Update is called once per frame
@@ -21,6 +24,10 @@ public class Shuffler : MonoBehaviour
 
     void shuffle()
     {
+        for(int i = 0; i < 9; i++)
+            pieces.Add(Instantiate(piece));
+
+        board.AssignPieces(pieces, 0);
     }
 
     void Awake()
