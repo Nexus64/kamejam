@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelSkipper : MonoBehaviour {
-
+    public string targetScene;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +17,7 @@ public class LevelSkipper : MonoBehaviour {
 
     void OnMouseDown()
     {
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene(targetScene);
         
     }
 }

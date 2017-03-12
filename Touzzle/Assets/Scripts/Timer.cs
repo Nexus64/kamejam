@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 	public float maxTime;
@@ -16,6 +17,11 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		countdown -= Time.deltaTime;
 		slider.value = countdown / maxTime;
+        if (countdown <= 0)
+        {
+            LevelManager.level = 1;
+            SceneManager.LoadScene("GameOver");
+        }
 	}
 
 	public void TimePenalty(float penaltyPercent = 0.25f)

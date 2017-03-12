@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\PieceTable.cs" />
      <Compile Include="Assets\Scripts\Shuffler.cs" />
      <Compile Include="Assets\Scripts\TargetPiece.cs" />
+     <Compile Include="Assets\Scripts\Tiler.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

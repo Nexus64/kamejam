@@ -6,6 +6,8 @@ public class LevelManager : MonoBehaviour
 {
     public static int level = 1;
     public int piecesAmount;
+    public const float StartTime = 20;
+    public const float StartRatio = 3;
 // Use this for initialization
 void Start()
     {
@@ -20,10 +22,11 @@ void Start()
 
     public void LoadLevel()
     {
+        float ratio = -Mathf.Pow(level - 1, 1.1f) / StartTime + StartRatio;
         GetComponent<Timer>().maxTime = MaxTime();
         GetComponent<Timer>().Reset();
-        piecesAmount = PiecesAmount();
-        FindObjectOfType<LevelCounter>().Reset();
+        piecesAmount = PiecesAmount(ratio);
+        FindObjectOfType<LevelCounter>().Reset(piecesAmount);
         GetComponent<Shuffler>().NextPuzzle();
         level++;
     }
@@ -33,13 +36,13 @@ void Start()
         return FindObjectOfType<LevelCounter>().points >= piecesAmount;
     }
 
-    int PiecesAmount()
+    int PiecesAmount(float ratio)
     {
-        return (int)(2+(level-1)*0.667f);
+        return (int)(MaxTime()/ratio);
     }
 
     float MaxTime()
     {
-        return 20 + (level-1)*10f;
+        return StartTime + (level-1)*StartTime*0.25f;
     }
 }
