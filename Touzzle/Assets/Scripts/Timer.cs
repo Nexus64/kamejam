@@ -8,8 +8,10 @@ public class Timer : MonoBehaviour {
 	public float maxTime;
 	public float countdown;
 	public Slider slider;
+    AudioSource clock;
 	// Use this for initialization
 	void Start () {
+        clock = GetComponent<AudioSource>();
 		Reset();
 	}
 	
@@ -17,6 +19,11 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		countdown -= Time.deltaTime;
 		slider.value = countdown / maxTime;
+        if ((int)((1 - slider.value) * 100) % 20 == 0 && slider.value > 0.1)
+        {
+            clock.volume = (1 - slider.value) * 0.8f + 0.2f;
+            clock.pitch = (1 - slider.value) * 1.4f + 0.6f;
+        }
         if (countdown <= 0)
         {
             LevelManager.level = 1;

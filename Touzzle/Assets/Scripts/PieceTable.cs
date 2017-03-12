@@ -9,12 +9,16 @@ public class PieceTable : MonoBehaviour {
 	public int targetPiece;
 	List<Transform> positions;
 	public Shuffler shuffler;
+    AudioSource sound;
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake () {
 		pieces = new List<Piece>(GetComponentsInChildren<Piece>());
+        sound = GetComponent<AudioSource>();
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,12 +33,16 @@ public class PieceTable : MonoBehaviour {
             {
                 SceneManager.LoadScene("Interlude");
             }
-            else 
+            else
+            {
+                sound.PlayOneShot(correctSound, 1F);
                 shuffler.NextPuzzle();
+            }
 		}
 		else
 		{
-			shuffler.GetComponentInParent<Timer>().TimePenalty();
+            sound.PlayOneShot(wrongSound, 1F);
+            shuffler.GetComponentInParent<Timer>().TimePenalty();
 		}
 	}
 
