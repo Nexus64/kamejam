@@ -25,6 +25,13 @@ public class Shuffler : MonoBehaviour
     public void NextPuzzle()
     {
         counter.IncreasePoints();
+        var targetAnim = targetPiece.GetComponent<Animator>();
+        foreach (Piece piece in board.pieces)
+        {
+            var anim = piece.GetComponent<Animator>();
+            anim.Play("PieceSpawn", -1, 0);
+        }
+        targetAnim.Play("TargetSpawn", -1, 0);
         Shuffle();
     }
 

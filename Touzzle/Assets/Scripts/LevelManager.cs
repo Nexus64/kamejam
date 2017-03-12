@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static int level = 5000;
+    public static int level = 1;
     public int piecesAmount;
     public const float StartTime = 20;
     public const float StartRatio = 3;
