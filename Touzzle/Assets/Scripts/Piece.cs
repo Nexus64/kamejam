@@ -32,11 +32,11 @@ public class Piece : MonoBehaviour
     public void UpdateProperties()
     {
         List<SpriteRenderer> childs = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
-        childs[1].transform.rotation = (new Quaternion(1, 0, 0, 0));
+        childs[1].transform.localRotation = (new Quaternion(1, 0, 0, 0));
         childs[0].sprite = picture;
         childs[1].sprite = shape;
         childs[1].flipX = mirror;
-        childs[1].transform.Rotate(0, 0, 90*rotation);
+        childs[1].transform.Rotate(0, 0, 90*rotation, Space.Self);
     }
 
     public bool Equals(Piece other)

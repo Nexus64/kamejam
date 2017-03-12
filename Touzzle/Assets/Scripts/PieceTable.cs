@@ -36,6 +36,7 @@ public class PieceTable : MonoBehaviour {
             else
             {
                 sound.PlayOneShot(correctSound, 1F);
+                ResetAnimation();
                 shuffler.NextPuzzle();
             }
 		}
@@ -46,6 +47,14 @@ public class PieceTable : MonoBehaviour {
 		}
 	}
 
+    void ResetAnimation()
+    {
+        foreach(Piece piece in pieces)
+        {
+            var anim = piece.GetComponent<Animator>();
+            //anim.Play("PieceAnimation", -1, 0);
+        }
+    }
 	//public void AssignPieces(List<Piece> pieces, int targetPiece){
 	//	this.pieces = pieces;
 	//	this.targetPiece = targetPiece;
