@@ -9,15 +9,15 @@ public class PieceTable : MonoBehaviour {
 	public int targetPiece;
 	List<Transform> positions;
 	public Shuffler shuffler;
-    AudioSource sound;
-    public AudioClip correctSound;
-    public AudioClip wrongSound;
+	AudioSource sound;
+	public AudioClip correctSound;
+	public AudioClip wrongSound;
 
-    // Use this for initialization
-    void Awake () {
+	// Use this for initialization
+	void Awake () {
 		pieces = new List<Piece>(GetComponentsInChildren<Piece>());
-        sound = GetComponent<AudioSource>();
-    }
+		sound = GetComponent<AudioSource>();
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,28 +28,28 @@ public class PieceTable : MonoBehaviour {
 	{
 		if (piece.Equals(pieces[targetPiece]))
 		{
-            if (shuffler.GetComponent<LevelManager>().CheckLevel())
-            {
-                SceneManager.LoadScene("Interlude");
-            }
-            else
-            {
-                var colorTime = piece.GetComponent<ParticleSystem>().colorOverLifetime;
-                var gradient = new ParticleSystem.MinMaxGradient(Color.white, Color.green);
-                colorTime.color = gradient;
-                piece.GetComponent<ParticleSystem>().Play();
-                sound.PlayOneShot(correctSound, 1F);
-                shuffler.NextPuzzle();
-            }
+			if (shuffler.GetComponent<LevelManager>().CheckLevel())
+			{
+				SceneManager.LoadScene("Interlude");
+			}
+			else
+			{
+				var colorTime = piece.GetComponent<ParticleSystem>().colorOverLifetime;
+				var gradient = new ParticleSystem.MinMaxGradient(Color.white, Color.green);
+				colorTime.color = gradient;
+				piece.GetComponent<ParticleSystem>().Play();
+				sound.PlayOneShot(correctSound, 1F);
+				shuffler.NextPuzzle();
+			}
 		}
 		else
 		{
-            var colorTime = piece.GetComponent<ParticleSystem>().colorOverLifetime;
-            var gradient = new ParticleSystem.MinMaxGradient(Color.white, Color.red);
-            colorTime.color = gradient;
-            piece.GetComponent<ParticleSystem>().Play();
-            sound.PlayOneShot(wrongSound, 1F);
-            shuffler.GetComponentInParent<Timer>().TimePenalty();
+			var colorTime = piece.GetComponent<ParticleSystem>().colorOverLifetime;
+			var gradient = new ParticleSystem.MinMaxGradient(Color.white, Color.red);
+			colorTime.color = gradient;
+			piece.GetComponent<ParticleSystem>().Play();
+			sound.PlayOneShot(wrongSound, 1F);
+			shuffler.GetComponentInParent<Timer>().TimePenalty();
 		}
 	}
 
