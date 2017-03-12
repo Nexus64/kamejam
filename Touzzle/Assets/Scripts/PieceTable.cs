@@ -34,12 +34,20 @@ public class PieceTable : MonoBehaviour {
             }
             else
             {
+                var colorTime = piece.GetComponent<ParticleSystem>().colorOverLifetime;
+                var gradient = new ParticleSystem.MinMaxGradient(Color.white, Color.green);
+                colorTime.color = gradient;
+                piece.GetComponent<ParticleSystem>().Play();
                 sound.PlayOneShot(correctSound, 1F);
                 shuffler.NextPuzzle();
             }
 		}
 		else
 		{
+            var colorTime = piece.GetComponent<ParticleSystem>().colorOverLifetime;
+            var gradient = new ParticleSystem.MinMaxGradient(Color.white, Color.red);
+            colorTime.color = gradient;
+            piece.GetComponent<ParticleSystem>().Play();
             sound.PlayOneShot(wrongSound, 1F);
             shuffler.GetComponentInParent<Timer>().TimePenalty();
 		}
